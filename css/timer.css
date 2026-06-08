@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,15 +17,19 @@ body{
 }
 
 #logoimg{
-  width: 300px;         /* Ajuste o tamanho conforme necessário */
+
+    width:100px;
+    max-width:80%;
+
+           /* Ajuste o tamanho conforme necessário width: 100px; */
   height: auto;        /* Mantém a proporção da imagem */
   margin-bottom: 20px; /* Cria o espaçamento entre a logo e o círculo */
   align-self: center; /* Centraliza a imagem horizontalmente */
   justify-self: center; /* Centraliza a imagem horizontalmente */
   display: block; /* Garante que a imagem seja tratada como um bloco para centralização */
   position:absolute;
-  top: 20px; /* Ajuste a posição vertical conforme necessário */ 
-  left: 42.5%; /* Centraliza horizontalmente */
+  top: 100px; /* Ajuste a posição vertical conforme necessário */ 
+  left: center; /* Centraliza horizontalmente */
 }
 
 #crono{
