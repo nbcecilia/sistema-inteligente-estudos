@@ -17,19 +17,13 @@ body{
 }
 
 #logoimg{
-
-    width:100px;
-    max-width:80%;
-
-           /* Ajuste o tamanho conforme necessário width: 100px; */
-  height: auto;        /* Mantém a proporção da imagem */
-  margin-bottom: 20px; /* Cria o espaçamento entre a logo e o círculo */
-  align-self: center; /* Centraliza a imagem horizontalmente */
-  justify-self: center; /* Centraliza a imagem horizontalmente */
-  display: block; /* Garante que a imagem seja tratada como um bloco para centralização */
-  position:absolute;
-  top: 100px; /* Ajuste a posição vertical conforme necessário */ 
-  left: center; /* Centraliza horizontalmente */
+    width: 100px;
+    max-width: 80%;
+    height: auto;        /* Mantém a proporção da imagem */
+    margin-bottom: 20px; /* Cria o espaçamento entre a logo e o timer */
+    display: block;      /* Transforma em bloco para aceitar margem automática */
+    margin-left: auto;   /* Truque de ouro para centralizar: */
+    margin-right: auto;  /* empurra os dois lados por igual */
 }
 
 #crono{
@@ -40,7 +34,6 @@ body{
     padding: 2rem;
     border-radius: 10px;
     width: 280px;
- 
 }
 
 #timer{
