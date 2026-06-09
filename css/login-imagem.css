@@ -1,121 +1,129 @@
+/* Seletor Universal (*): Aplica as regras para absolutamente todas as tags do projeto */
 * { 
-    box-sizing: border-box; 
-    margin: 0; 
+    box-sizing: border-box; /* Inclui as bordas e o padding no cálculo da largura total do elemento, evitando quebras de layout */
+    margin: 0; /* Remove o espaçamento interno*/
     padding: 0; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 } 
 
+/* Estilização do plano de fundo e centralização do conteúdo na tela */
 body { 
-    background-color: #c8b6f3; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
+    background-color:#7245ec; 
+    display: flex; /* Ativa o modelo Flexbox para alinhar os elementos filhos */
+    justify-content: center; /* Centraliza o card horizontalmente na tela */
+    align-items: center; /* Centraliza o card verticalmente na tela */
+    height: 100vh; /* Força o corpo da página a ocupar exatamente 100% da altura da tela visível */
 } 
 
-/* O card principal agora é um container Flex de duas colunas */
+/* O card principal Flex de duas colunas */
 .login-card { 
     background-color: #ffffff; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-    width: 100%; 
-    max-width: 800px; 
-    display: flex;
-    /* overflow: hidden: Esconde qualquer conteúdo que tente "vazar" para fora 
-       das bordas arredondadas. Sem isso, a imagem colada no canto esquerdo 
-       perderia o efeito do border-radius: 10px e ficaria com pontas quadradas. */
-    overflow: hidden; 
+    border-radius: 10px;  /* Arredonda os quatro cantos do cartão em 10 pixels */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);   /* Adiciona uma sombra suave nas laterais e fundo para dar efeito de profundidade */
+    width: 100%; /* Permite que o card se ajuste dinamicamente até 100% da largura da tela */
+    max-width: 800px; /* Limita o crescimento horizontal do card no tamanho máximo de 800 pixels */
+    display: flex;/* Ativa o Flexbox para colocar a imagem e o formulário lado a lado */
+    overflow: hidden; /* overflow: hidden: Esconde qualquer conteúdo que tente "vazar" para fora das bordas arredondadas. Sem isso, a imagem colada no canto esquerdo perderia o efeito do border-radius: 10px e ficaria com pontas quadradas. */
 } 
 
 /* Coluna da Imagem (Esquerda) */
 .login-sidebar {
-    /* flex: 1.5: Distribui o espaço proporcionalmente. Significa que a coluna 
-       da imagem será um pouco maior (ganha proporção 1.5) do que a do formulário (que tem flex: 1). */
-    flex: 1.5; 
-    display: flex;
+    flex: 1.6; /* flex: 1.6: Distribui o espaço proporcionalmente. Significa que a coluna da imagem será um pouco maior do que a do formulário (que tem flex: 1). */
+    display: flex; /* Ativa o Flexbox interno para garantir o alinhamento da imagem */
 }
 
+/* Ajuste da imagem para preencher o espaço disponível */
 .login-sidebar img {
     width: 100%;
     height: 100%;
-    /* object-fit: cover: Comportamento fundamental para imagens de tela cheia ou banners. 
-       Faz a imagem preencher todo o espaço disponível cortando os excessos, 
-       mas sem esmagar ou distorcer a proporção do desenho original. */
-    object-fit: cover; 
-    display: block;
+    object-fit: cover; /* object-fit: cover: Comportamento fundamental para imagens de tela cheia ou banners. Faz a imagem preencher todo o espaço disponível cortando os excessos, mas sem esmagar ou distorcer a proporção do desenho original. */
+    display: block; /* Transforma a imagem em bloco para remover pequenos vãos inferiores padrão de elementos inline */
 }
 
 /* Coluna do Formulário (Direita) */
 .login-content {
     flex: 1; /* Ocupa um espaço menor na proporção em comparação à imagem */
-    padding: 40px; 
-    display: flex;
-    /* flex-direction: column: Altera o eixo do Flexbox. Em vez de empilhar 
-       as coisas de lado (linha), faz com que fiquem uma abaixo da outra (coluna). */
-    flex-direction: column;
+    padding: 40px;  /* Ativa o Flexbox para organizar os elementos internos */
+    display: flex; /* flex-direction: column: Altera o eixo do Flexbox. Em vez de empilhar as coisas de lado (linha), faz com que fiquem uma abaixo da outra (coluna). */
+    flex-direction: column; /* flex-direction: column: Altera o eixo do Flexbox. Em vez de empilhar as coisas de lado (linha), faz com que fiquem uma abaixo da outra (coluna). */
     justify-content: center;
 }
 
 h2 { 
     text-align: center; 
-    color: #5b46e8; 
+    color: #0d022c; 
     margin-bottom: 25px; 
 } 
 
 .input-group { 
-    margin-bottom: 20px; 
+    margin-bottom: 20px; /* Cria um distanciamento de 20 pixels abaixo de cada bloco de input */
 } 
-
+/* Rótulos dos campos (textos descritivos) */
 label { 
-    display: block; 
+    display: block;  /* Transforma o label em bloco para que ele fique sozinho na linha acima do input */
     margin-bottom: 8px; 
     color: #555555; 
     font-size: 0.9em; 
 } 
 
-/* Seletor de Atributo: Aplica a estilização apenas nas caixas de input que possuírem 
-   exatamente o type="email" ou type="password". Inputs do tipo "checkbox", por exemplo, 
-   são completamente ignorados por essa regra, protegendo o layout de quebras. */
+/* Seletor de Atributo: Aplica a estilização apenas nas caixas de input que possuírem  exatamente o type="email" ou type="password". Inputs do tipo "checkbox", por exemplo, são completamente ignorados por essa regra, protegendo o layout de quebras. */
 input[type="email"], input[type="password"] { 
     width: 100%; 
     padding: 12px; 
     border: 1px solid #cccccc; 
     border-radius: 5px; 
     font-size: 1em; 
-    /* outline: none: Remove a borda preta ou azul padrão que os navegadores colocam 
-       automaticamente ao redor de caixas de texto quando são selecionadas. */
-    outline: none; 
+    outline: none; /* outline: none: Remove a borda preta ou azul padrão que os navegadores colocam automaticamente ao redor de caixas de texto quando são selecionadas. */
     transition: border-color 0.3s; 
 } 
 
-/* :focus: Pseudo-classe de estado. Aplica as regras de CSS somente quando o usuário 
-   clica dentro do campo e começa a digitar, dando um feedback visual de seleção ativa. */
-input[type="email"]:focus, input[type="password"]:focus { 
+input[type="email"]:focus, input[type="password"]:focus { /* :focus: Pseudo-classe de estado. Aplica as regras de CSS somente quando o usuário clica dentro do campo e começa a digitar, dando um feedback visual de seleção ativa. */
     border-color: #db71f5; 
 } 
 
+/* Linha utilitária abaixo dos campos (Lembrar-me e Esqueceu a senha) */
 .opcoes-linhas { 
     display: flex; 
-    justify-content: space-between; 
+    justify-content: space-between; /* Empurra o primeiro item para o início (esquerda) e o segundo para o fim (direita) */
     align-items: center; 
     font-size: 0.85em; 
     margin-bottom: 20px; 
 } 
 
-/* Seletor Composto Descendente: Modifica apenas as tags <label> que estiverem 
-   exclusivamente DENTRO de um container com a classe .opcoes-linhas. Os outros 
-   labels gerais do formulário continuam intocados. */
+/* Seletor Composto Descendente: Modifica apenas as tags <label> que estiverem exclusivamente DENTRO de um container com a classe .opcoes-linhas. Os outros labels gerais do formulário continuam. */
 .opcoes-linhas label { 
     display: inline; 
     margin-bottom: 0; 
 } 
 
+/* Links internos da linha de opções */
 .opcoes-linhas a { 
     color: #5b46e8; 
     text-decoration: none; 
 } 
 
-button { 
+/* Modificado para estilizar a tag <a> como se fosse o botão */
+.botao-acessar { 
+    display: block;          /* Permite que o link se comporte como um bloco */
+    width: 100%; 
+    padding: 12px; 
+    background-color: #7245ec; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1em; 
+    text-align: center;      /* Centraliza o texto dentro do botão */
+    text-decoration: none;   /* Remove o sublinhado padrão de links */
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+} 
+
+/* Feedback visual ao passar o mouse (um tom levemente mais escuro) */
+.botao-acessar:hover { 
+    background-color: #4432c2; 
+}
+
+/* button { 
     width: 100%; 
     padding: 12px; 
     background-color: #5b46e8; 
@@ -123,15 +131,14 @@ button {
     border: none; 
     border-radius: 5px; 
     font-size: 1em; 
-    /* cursor: pointer: Altera o cursor do mouse para aquela "mãozinha" clássica 
-       de clique, indicando visualmente que o botão é interativo. */
+       ---cursor: pointer: Altera o cursor do mouse para aquela "mãozinha" clássica de clique, indicando visualmente que o botão é interativo. 
     cursor: pointer; 
     transition: background-color 0.3s; 
 } 
 
 button:hover { 
     background-color: #5b46e8; 
-} 
+}  */
 
 .registro-link { 
     text-align: center; 
@@ -140,7 +147,7 @@ button:hover {
 } 
 
 .registro-link a { 
-    color: #5b46e8; 
+    color: #7245ec; 
     text-decoration: none; 
     font-weight: bold; 
 }

@@ -2,51 +2,58 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <!--Configura a janela de visualização (viewport) para tornar a página responsiva em dispositivos móveis-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+     <!-- Vincula o arquivo de estilização CSS externo para aplicar o design visual ao HTML -->
     <link rel="stylesheet" href="css/login-imagem.css">
 </head>
 <body>
-<!-- .login-card: Excelente escolha estrutural. Agrupar os dois lados (imagem e form) 
-     em um bloco pai facilita o uso de Flexbox/Grid para dividi-los meio a meio no CSS. -->
+<!-- Para agrupar os dois lados (imagem e form) em um bloco pai facilita o uso de Flexbox/Grid para dividi-los meio a meio no CSS. -->
 <div class="login-card"> 
     
     <!-- Lado Esquerdo: Imagem -->
     <div class="login-sidebar">
-        <img src="img/logotipo.jpeg" alt="Imagem de Login">
+        <img src="img/logotipo-removed.jpeg" alt="Imagem de Login">
     </div>
 
     <!-- Lado Direito: Formulário -->
+
+     <!-- Div que armazena o bloco de interações e textos do formulário -->
     <div class="login-content">
         <h2>Acesse sua conta</h2> 
     
         <form method="POST"> 
-                 <!-- .input-group: Bloco utilitário padrão na indústria. Organiza verticalmente 
-                 o par formado por uma legenda (label) e seu respectivo campo de preenchimento. -->
+            <!-- .input-group: Organiza verticalmente o par formado por uma legenda (label) e seu respectivo campo de preenchimento. -->
+            <!-- Container para agrupar o rótulo e o campo de digitação do e-mail -->
             <div class="input-group"> 
                 <!-- 'for="iemail"' aponta diretamente para o 'id="iemail"' -->
                 <label for="iemail">E-mail</label> 
                 <input type="email" id="iemail" name="email" placeholder="exemplo@email.com" required> 
             </div> 
-            
-            <div class="input-group"> 
-                <label for="ipassword">Senha</label> 
+            <!-- Container para agrupar o rótulo e o campo de digitação da senha -->
+            <div class="input-group">
+                <label for="ipassword">Senha</label>
+                <!-- Campo do tipo password (oculta os caracteres digitados por privacidade) --> 
                 <input type="password" id="ipassword" name="password" placeholder="Digite sua senha" required> 
             </div> 
             
             <div class="opcoes-linhas"> 
                 <div> 
                     <!-- type="checkbox": Caixa de seleção binária (marcado/desmarcado). 
-                         O label associado aqui também serve como área de clique para ativar a caixa. -->
+                    O label associado aqui também serve como área de clique para ativar a caixa. -->
                     <input type="checkbox" id="irelembrar" name="relembrar"> 
                     <label for="irelembrar">Lembrar-me</label> 
                 </div> 
-                <a href="recuperar-senha.html">Esqueceu a senha?</a> 
-            </div> 
-                <!-- Aqui tenho que tirar o href depois,só para demonstar quando o usuário for cadastrado!!!!! -->
-                <a href="paginausuario.html"> 
-                <button type="button">Acessar</button>
-                </a>
+                     <!-- Link direcionando para a página de recuperação de senha externa -->
+                    <a href="recuperar-senha.html">Esqueceu a senha?</a> 
+                </div> 
+
+                <a href="paginausuario.html" class="botao-acessar">Acessar</a>
+                <!-- Aqui tenho que tirar a tag <a> e href depois,SÓ PARA FINS DE APRESENTAÇÃO!!!!!-->
+                
+                <!--<button type="submit">Acessar</button>
+                </a>-->
         </form> 
         
         <div class="registro-link"> 

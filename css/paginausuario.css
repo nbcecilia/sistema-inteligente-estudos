@@ -38,7 +38,7 @@ header {
     gap:12px;
     font-size:28px;
     font-weight:800;
-    color:#5b46e8;
+    color:#402d6d;
     letter-spacing:2px;
 }
 .logo img{
@@ -58,7 +58,7 @@ header {
 }
 .pesquisa button{
     border:none;
-    background:#5b46e8;
+    background:#7245ec;
     color:white;
     padding:10px 18px;
     border-radius:10px;
@@ -66,14 +66,14 @@ header {
 }
 .sair{
     text-decoration:none;
-    background:#5b46e8;
+    background:#7245ec;
     color:white;
     padding:10px 15px;
     border-radius:10px;
     font-weight:600;
 }
 .sair:hover{
-    background:#5b46e8;
+    background:#452fd4;
 }
 .acoes-topo{
     display:flex;
@@ -107,7 +107,7 @@ main {
     margin-bottom:15px;
 }
 .boas-vindas h1{
-    color:#4f46e5;
+    color:#7245ec;
     font-size:32px;
     margin-bottom:8px;
 }
@@ -138,23 +138,23 @@ main {
 } 
 h3{
     text-decoration:none;
-    color:#5b46e8;
+    color:#7245ec;
 }
 .icone-card{
     width:60px;
     height:60px;
-    color:#5b46e8;
+    color:#7245ec;
     border-radius:15px;
     background:#ede9fe;
     display:flex;
     justify-content:center;
     align-items:center;
-    color:#5b46e8;
+    color:#7245ec;
     font-size:24px;
 }
 .card-link{
     text-decoration:none;
-    color:#5b46e8;
+    color:#7245ec;
     font-weight:600;
     }
 /* FREQUÊNCIA */
@@ -232,7 +232,7 @@ td{
 }
 .planner h2{
     text-align:center;
-    color:#5b46e8;
+    color:#7245ec;
     margin-bottom:15px;
 }
 /* DIAS DA SEMANA */

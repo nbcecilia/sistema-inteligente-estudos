@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #c8b6f3;
+    background-color: #7245ec;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,14 +19,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    /* max-width: 400px: Essencial para o reaproveitamento. Limitando o card a 400px 
+    max-width: 400px; /* max-width: 400px: Essencial para o reaproveitamento. Limitando o card a 400px 
        (em vez dos 800px da versão com imagem), ele ganha um visual centralizado e compacto.*/
-    max-width: 400px;
 }
 
 h2 {
     text-align: center;
-    color:  #5b46e8;
+    color:  #7245ec;
     margin-bottom: 25px;
 }
 
@@ -65,9 +64,7 @@ input[type="password"]:focus {
     margin-bottom: 20px;
 }
 
-/* .options-row: Um detalhe de código legado ou inativo. Esta classe não existe 
-   no seu HTML de recuperar senha (que usa apenas a classe .opcoes-linhas). 
-   Ela não quebra o site, mas o CSS inserido aqui simplesmente não é aplicado na tela. */
+/* 
 .options-row label {
     display: inline;
     margin-bottom: 0;
@@ -77,11 +74,11 @@ input[type="password"]:focus {
     color:  #5b46e8;
     text-decoration: none;
 }
-
+*/
 button {
     width: 100%;
     padding: 12px;
-    background-color:  #5b46e8;
+    background-color: #7245ec;
     color: white;
     border: none;
     border-radius: 5px;
@@ -91,10 +88,8 @@ button {
 }
 
 button:hover {
-    /* Mesmo valor de cor: No momento, passar o mouse no botão não altera a cor de fundo 
-       dele porque o background-color do hover está idêntico ao original (#8657f3). 
-       Para gerar um feedback de clique, o ideal seria escurecer ou clarear um pouco aqui. */
-    background-color: #5b46e8;
+    /*Para gerar um feedback de clique,escurecer ou clarear. */
+    background-color: #3f0c9e;
 }
 
 .registro-link {
@@ -104,7 +99,7 @@ button:hover {
 }
 
 .registro-link a {
-    color: #5b46e8;
+    color: #7245ec;
     text-decoration: none;
     font-weight: bold;
 }

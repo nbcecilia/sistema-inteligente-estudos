@@ -4,27 +4,21 @@
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: Altera o cálculo do tamanho do elemento. O valor 'border-box' 
-       garante que paddings e borders fiquem DENTRO do tamanho total definido, 
-       impedindo que caixas quebrem o layout ao adicionar espaçamento. */
-    box-sizing: border-box;
+    box-sizing: border-box; /* box-sizing: Altera o cálculo do tamanho do elemento. O valor 'border-box' garante que paddings e borders fiquem DENTRO do tamanho total definido, impedindo que caixas quebrem o layout ao adicionar espaçamento. */
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
     background-color: #c8b6f3; 
     color: #0f172a; 
-    /* min-height: Define que o corpo do site terá, no mínimo, a altura total da 
-       tela visível (100vh = 100% da viewport height), ideal para fundos preenchidos. */
-    min-height: 100vh;
+    min-height: 100vh; /* min-height: Define que o corpo do site terá, no mínimo, a altura total da tela visível (100vh = 100% da viewport height), ideal para fundos preenchidos. */
 }
 
+/* Seletor de Tag Global: Aplica as regras abaixo para absolutamente todos os links (tags <a>) da página */
 a {
-    text-decoration: none;
-    /* transition: Cria animações suaves ao mudar propriedades no :hover. 
-       O 'ease-in-out' faz a transição começar devagar, acelerar e terminar devagar. */
-    transition: all 0.2s ease-in-out;
-}
+    text-decoration: none; /* Remove a linha sublinhada padrão que o navegador coloca em todos os links */
+    transition: all 0.2s ease-in-out; /* transition: Cria animações suaves ao mudar propriedades no :hover. O 'ease-in-out' faz a transição começar devagar, acelerar e terminar devagar. */
+} 
 
 /* ==========================================================================
    2. CABEÇALHO (header, .logo, nav, .btn-login)
@@ -35,10 +29,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 20px 5%; 
     background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0; 
-    /* position: fixed: Fixa o elemento na tela. Ele não se move quando você rola a página.
+    border-bottom: 1px solid #e2e8f0; /* position: fixed: Fixa o elemento na tela. Ele não se move quando você rola a página.
        'top: 0' e 'left: 0' grudam ele no topo esquerdo. 
        'z-index: 100' funciona como uma "camada", garantindo que ele flutue por cima de tudo. */
     position: fixed;
@@ -56,7 +49,7 @@ header {
     gap: 10px;           
     font-size: 22px;
     font-weight: 800;
-    color: #5b46e8;
+    color: #402d6d;
     letter-spacing: 1.5px;
 }
 
@@ -79,15 +72,15 @@ header {
 } */
 
 .btn-login {
-    color: #5b46e8;
+    color: #7245ec;
     font-weight: 600;
     padding: 8px 18px;
-    border: 2px solid #5b46e8;
+    border: 2px solid #7245ec;
     border-radius: 6px;
 }
 
 .btn-login:hover {
-    background-color: #5b46e8;
+    background-color: #7245ec;
     color: #ffffff;
 }
 
@@ -104,7 +97,7 @@ header {
     padding: 120px 20px 60px 20px; 
     /* radial-gradient: Cria um fundo esfumaçado em círculo. Começa com roxo 
        no canto superior direito e clareia em direção às outras extremidades. */
-    background: radial-gradient(circle at top right, #eeeef0, #9c8adb);
+    background: radial-gradient(circle at top right, #eeeef0, #7245ec);
 }
 
 .hero-content {
@@ -155,12 +148,66 @@ p {
     /* box-shadow: Adiciona sombra. Os 3 primeiros valores controlam posição horizontal, 
        vertical e o desfoque. O quarto valor aplica cor com transparência (rgba).
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); 
-} */
+} 
 
 .btn-principal:hover {
     background-color: #5b46e8;
     /* transform: translateY: Move o botão fisicamente no eixo vertical. 
-       Valores negativos (-2px) jogam o elemento para cima, simulando um efeito físico de clique/foco. */
+       Valores negativos (-2px) jogam o elemento para cima, simulando um efeito físico de clique/foco. 
     transform: translateY(-2px); 
     box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+}*/
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (Media Queries para Celulares e Tablets)
+   ========================================================================== */
+
+/* @media: Regra que monitora o tamanho da tela. As regras dentro deste bloco só 
+   serão ativadas se a largura da tela do dispositivo for de 768px ou menor. */
+@media (max-width: 768px) {
+    
+    /* Ajustes do Cabeçalho no Mobile */
+    header {
+        /* Reduz o espaçamento interno nas laterais para 4% para ganhar espaço útil na tela do celular */
+        padding: 15px 4%; 
+    }
+
+    .logo {
+        /* Diminui o tamanho da fonte do logotipo para não ocupar a linha inteira */
+        font-size: 18px; 
+        /* Reduz a distância entre o ícone e o texto do logo */
+        gap: 8px; 
+    }
+
+    .logo img {
+        /* Diminui a altura do logotipo para harmonizar com a tela menor */
+        height: 32px; 
+    }
+
+    .btn-login {
+        /* Reduz o preenchimento do botão para que ele caiba na barra superior sem apertar os outros elementos */
+        padding: 6px 12px; 
+        /* Diminui sutilmente o tamanho do texto do botão */
+        font-size: 14px; 
+    }
+
+    /* Ajustes da Seção Principal (Hero) no Mobile */
+    .hero {
+        /* Diminui o padding superior para 100px já que o header ficou mais baixo, mantendo o equilíbrio visual */
+        padding: 100px 16px 40px 16px; 
+    }
+
+    h1 {
+        /* Reduz drasticamente o tamanho do título principal (de 44px para 32px) para evitar que palavras grandes quebrem de forma feia */
+        font-size: 32px; 
+        /* Diminui a margem inferior para aproximar o texto descritivo */
+        margin-bottom: 16px; 
+    }
+
+    p {
+        /* Diminui a fonte do texto para 16px, que é o tamanho ideal e legível para leitura em smartphones */
+        font-size: 16px; 
+        /* Reduz o espaço antes do botão de ação */
+        margin-bottom: 28px; 
+    }
 }
